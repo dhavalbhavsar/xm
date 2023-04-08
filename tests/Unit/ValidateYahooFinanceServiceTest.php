@@ -35,7 +35,7 @@ class ValidateYahooFinanceServiceTest extends TestCase
         $histories = $yahooService->historicalData(self::DEFAULT_COMPANY_SYMBOL)->filterByDate($startDate, $endDate);
 
         foreach ($histories['history_prices'] as $historyPrice) {
-            $priceDate = Carbon::createFromFormat('d/m/Y', $historyPrice['date'])->startOfDay()->timestamp;
+            $priceDate = Carbon::createFromFormat('Y-m-d', $historyPrice['date'])->startOfDay()->timestamp;
             if($startDate <= $priceDate && $endDate >= $priceDate){
                 $this->assertTrue(true);
             } else {

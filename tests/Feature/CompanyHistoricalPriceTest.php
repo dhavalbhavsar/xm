@@ -32,8 +32,8 @@ class CompanyHistoricalPriceTest extends TestCase
         // Validation of future date both start and end date
         $payload = [
             'company_symbol' => $company->id,
-            'start_date' => Carbon::now()->addDay()->format('d/m/Y'),
-            'end_date' => Carbon::now()->addDays(2)->format('d/m/Y'),
+            'start_date' => Carbon::now()->addDay()->format('Y-m-d'),
+            'end_date' => Carbon::now()->addDays(2)->format('Y-m-d'),
             'email' => $faker->email()
         ];
 
@@ -44,8 +44,8 @@ class CompanyHistoricalPriceTest extends TestCase
         // Validation of future date of end date
         $payload = [
             'company_symbol' => $company->id,
-            'start_date' => Carbon::now()->format('d/m/Y'),
-            'end_date' => Carbon::now()->addDays(2)->format('d/m/Y'),
+            'start_date' => Carbon::now()->format('Y-m-d'),
+            'end_date' => Carbon::now()->addDays(2)->format('Y-m-d'),
             'email' => $faker->email()
         ];
 
@@ -57,8 +57,8 @@ class CompanyHistoricalPriceTest extends TestCase
         //Validate the date of start date greater than end date
         $payload = [
             'company_symbol' => $company->id,
-            'start_date' => Carbon::now()->format('d/m/Y'),
-            'end_date' => Carbon::now()->addDays(-2)->format('d/m/Y'),
+            'start_date' => Carbon::now()->format('Y-m-d'),
+            'end_date' => Carbon::now()->addDays(-2)->format('Y-m-d'),
             'email' => $faker->email()
         ];
 
@@ -81,8 +81,8 @@ class CompanyHistoricalPriceTest extends TestCase
         //Validate invalid company symbol
         $payload = [
             'company_symbol' => random_int(100000, 999999),
-            'start_date' => Carbon::now()->addDays(-3)->format('d/m/Y'),
-            'end_date' => Carbon::now()->addDays(-2)->format('d/m/Y'),
+            'start_date' => Carbon::now()->addDays(-3)->format('Y-m-d'),
+            'end_date' => Carbon::now()->addDays(-2)->format('Y-m-d'),
             'email' => $faker->email()
         ];
 
@@ -93,8 +93,8 @@ class CompanyHistoricalPriceTest extends TestCase
         //Validate the date of current - With all valid data
         $payload = [
             'company_symbol' => $company->id,
-            'start_date' => Carbon::now()->addDays(-3)->format('d/m/Y'),
-            'end_date' => Carbon::now()->addDays(-2)->format('d/m/Y'),
+            'start_date' => Carbon::now()->addDays(-3)->format('Y-m-d'),
+            'end_date' => Carbon::now()->addDays(-2)->format('Y-m-d'),
             'email' => $faker->email()
         ];
 
