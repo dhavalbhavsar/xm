@@ -1,0 +1,9 @@
+@import "~bootstrap/scss/bootstrap";
+@import "node_modules/jquery-ui/dist/themes/black-tie/jquery-ui.min";
+
+
+.mb-3.required .form-label:after{
+    color: red;
+    content: "*";
+    position: absolute;
+}
