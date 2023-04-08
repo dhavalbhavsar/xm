@@ -10,7 +10,7 @@ In this exercise you need to create a PHP application that will have a form with
 For manual installation follow the steps
 
 - git clone 
-- copy .env.example .env
+- copy .env.example .env and update database setting
 - composer install
 - npm install && npm run build
 - php artisan migrate
